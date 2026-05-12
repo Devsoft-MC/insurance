@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Insurance Mobile",
+    "slug": "insurance-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.insurance.mobile"
+    },
+    "android": {
+      "package": "com.insurance.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#0f766e"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
