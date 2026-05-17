@@ -1,0 +1,298 @@
+{
+  "version": "2026-05-16",
+  "companyId": "united-india",
+  "companyName": "United India Insurance",
+  "sourcePriority": "APK values final",
+  "rounding": {
+    "tax": "round",
+    "total": "round"
+  },
+  "vehicles": {
+    "two_wheeler": {
+      "sourceClasses": ["Twowheelerliabilityclass", "Twowheelerpackageliabilityclass"],
+      "basicTpRates": [
+        { "ccSlabId": "tw_lt_75", "oldApkLabel": "< 75 CC", "one_year": 538, "five_years": 2901 },
+        { "ccSlabId": "tw_76_150", "oldApkLabel": "76-150 CC", "one_year": 714, "five_years": 3851 },
+        { "ccSlabId": "tw_151_300", "oldApkLabel": "151-300 CC", "one_year": 1366, "five_years": 7365 },
+        { "ccSlabId": "tw_301_350", "oldApkLabel": "301-350 CC", "one_year": 1366, "five_years": 7365 },
+        { "ccSlabId": "tw_gt_350", "oldApkLabel": "Exceeding 350 CC", "one_year": 2804, "five_years": 15117 }
+      ],
+      "components": {
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "NO": 0, "1 YEAR": 275, "5 YEARS": 1100 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "rates": { "Yes": 50, "No": 0 },
+          "longTermMultiplierByTenure": { "five_years": 5 }
+        },
+        "ll_employees": {
+          "oldApkLabel": "LL to Employees",
+          "rates": { "Yes": 50, "No": 0 },
+          "longTermMultiplierByTenure": { "five_years": 5 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA to Unnamed Passenger",
+          "formula": "(number_of_passengers * sum_insured_each / 1000) * 0.7",
+          "longTermMultiplierByTenure": { "five_years": 5 }
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 1 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 50 }
+          ],
+          "longTermMultiplierByTenure": { "five_years": 5 }
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_employees + ll_paid_driver + pa_unnamed_passenger - tppd_discount"
+    },
+    "private_car": {
+      "sourceClasses": ["PrivateCarliabilityclass", "Privatecarpackageliabilityclass"],
+      "basicTpRates": [
+        { "ccSlabId": "pc_lt_1000", "oldApkLabel": "< 1000 CC", "one_year": 2094, "three_years": 6521 },
+        { "ccSlabId": "pc_1001_1500", "oldApkLabel": "1001-1500 CC", "one_year": 3416, "three_years": 10640 },
+        { "ccSlabId": "pc_gt_1500", "oldApkLabel": "Exceeding 1500 CC", "one_year": 7897, "three_years": 24596 }
+      ],
+      "components": {
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "NO": 0, "1 YEAR": 275, "3 YEARS": 705 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "rates": { "Yes": 50, "No": 0 },
+          "longTermMultiplierByTenure": { "three_years": 3 }
+        },
+        "ll_employees": {
+          "oldApkLabel": "LL to Employees",
+          "rates": { "Yes": 50, "No": 0 },
+          "longTermMultiplierByTenure": { "three_years": 3 }
+        },
+        "cng_tp": {
+          "oldApkLabel": "BIFUEL KIT-TP",
+          "rates": { "Yes": 60, "No": 0 },
+          "longTermMultiplierByTenure": { "three_years": 3 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA to Unnamed Passenger",
+          "oneYearRules": [
+            { "when": "sum_insured_each <= 200000", "formula": "(number_of_passengers * sum_insured_each / 1000) * 0.5" },
+            { "when": "sum_insured_each == 500000", "formula": "number_of_passengers * 90" },
+            { "when": "sum_insured_each == 1000000", "formula": "number_of_passengers * 180" },
+            { "when": "sum_insured_each == 1500000", "formula": "number_of_passengers * 270" }
+          ],
+          "threeYearRules": [
+            { "when": "sum_insured_each <= 200000", "formula": "((number_of_passengers * sum_insured_each / 1000) * 0.5) * 3" },
+            { "when": "sum_insured_each == 500000", "formula": "number_of_passengers * 224" },
+            { "when": "sum_insured_each == 1000000", "formula": "number_of_passengers * 448" },
+            { "when": "sum_insured_each == 1500000", "formula": "number_of_passengers * 672" }
+          ]
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 7.5 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 100 }
+          ],
+          "longTermMultiplierByTenure": { "three_years": 3 }
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_employees + ll_paid_driver + pa_unnamed_passenger + cng_tp - tppd_discount"
+    },
+    "auto": {
+      "sourceClasses": ["Autoliabilityclass", "Autopackageliabilityclass"],
+      "basicTpRates": [
+        { "oldApkLabel": "Basic TP", "one_year": 2539 }
+      ],
+      "components": {
+        "ll_passenger": {
+          "oldApkLabel": "LL to Passenger",
+          "formula": "1214 * seating_capacity",
+          "required": true
+        },
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "Yes": 275, "No": 0 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "rates": { "Yes": 50, "No": 0 }
+        },
+        "cng_tp": {
+          "oldApkLabel": "BIFUEL KIT-TP",
+          "rates": { "Yes": 60, "No": 0 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA to Unnamed Passenger",
+          "formula": "(number_of_paid_drivers * sum_insured_each / 1000) * 0.6"
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 7.5 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 150 }
+          ]
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_passenger + ll_paid_driver + pa_unnamed_passenger + cng_tp - tppd_discount"
+    },
+    "taxi": {
+      "sourceClasses": ["Taxiliabilityclass", "Taxipackageliabilityclass"],
+      "basicTpRates": [
+        { "ccSlabId": "taxi_lt_1000", "oldApkLabel": "< 1000 CC", "one_year": 6040, "llPassenger": 1162 },
+        { "ccSlabId": "taxi_1001_1500", "oldApkLabel": "1001-1500 CC", "one_year": 7940, "llPassenger": 978 },
+        { "ccSlabId": "taxi_gt_1500", "oldApkLabel": "Exceeding 1500 CC", "one_year": 10523, "llPassenger": 1117 }
+      ],
+      "components": {
+        "ll_passenger": {
+          "oldApkLabel": "LL to Passenger",
+          "formula": "seating_capacity * slab_ll_passenger_rate"
+        },
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "Yes": 275, "No": 0 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "rates": { "Yes": 50, "No": 0 }
+        },
+        "cng_tp": {
+          "oldApkLabel": "BIFUEL KIT-TP",
+          "rates": { "Yes": 60, "No": 0 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA Unnamed Passengers",
+          "formula": "(number_of_passengers * sum_insured_each / 1000) * 0.6"
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 7.5 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 150 }
+          ]
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_passenger + ll_paid_driver + pa_unnamed_passenger + cng_tp - tppd_discount"
+    },
+    "bus": {
+      "sourceClasses": ["Busliabilityclass", "Buspackageliabilityclass"],
+      "basicTpRates": [
+        { "oldApkLabel": "> 6 Passengers", "one_year": 14343, "school_one_year": 12192 }
+      ],
+      "components": {
+        "ll_passenger": {
+          "oldApkLabel": "LL to Passenger",
+          "formula": "seating_capacity * 877"
+        },
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "Yes": 275, "No": 0 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "perUnit": 50
+        },
+        "cng_tp": {
+          "oldApkLabel": "BIFUEL KIT-TP",
+          "rates": { "Yes": 60, "No": 0 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA Unnamed Passengers",
+          "formula": "(number_of_passengers * sum_insured_each / 1000) * 0.6"
+        },
+        "ll_nonfare_passenger": {
+          "oldApkLabel": "LL to Non-Fare Passenger",
+          "perUnit": 125
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 7.5 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 200 }
+          ]
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_passenger + ll_paid_driver + pa_unnamed_passenger + cng_tp + ll_nonfare_passenger - tppd_discount"
+    },
+    "truck": {
+      "sourceClasses": ["Truckliabilityclass", "Truckpackageliabilityclass"],
+      "basicTpRates": [
+        { "ccSlabId": "truck_gvw_lt_7500", "oldApkLabel": "< 7500 Kg", "one_year": 16049 },
+        { "ccSlabId": "truck_gvw_7501_12000", "oldApkLabel": "7501-12000 Kg", "one_year": 27186 },
+        { "ccSlabId": "truck_gvw_12001_20000", "oldApkLabel": "12001-20000 Kg", "one_year": 35313 },
+        { "ccSlabId": "truck_gvw_20001_40000", "oldApkLabel": "20001-40000 Kg", "one_year": 43950 },
+        { "ccSlabId": "truck_gvw_gt_40000", "oldApkLabel": "Exceeding 40000 Kg", "one_year": 44242 }
+      ],
+      "components": {
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "Yes": 275, "No": 0 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "perUnit": 50
+        },
+        "cng_tp": {
+          "oldApkLabel": "BIFUEL KIT-TP",
+          "rates": { "Yes": 60, "No": 0 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA Unnamed Passengers",
+          "formula": "(number_of_passengers * sum_insured_each / 1000) * 0.6"
+        },
+        "ll_nonfare_passenger": {
+          "oldApkLabel": "LL to Non-Fare Passenger",
+          "perUnit": 75
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 7.5 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 200 }
+          ]
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_paid_driver + pa_unnamed_passenger + cng_tp + ll_nonfare_passenger - tppd_discount"
+    },
+    "delivery_van": {
+      "sourceClasses": ["DeliveryVanliabilityclass", "Deliveryvanpackageliabilityclass"],
+      "basicTpRates": [
+        { "ccSlabId": "delivery_van_public", "oldApkLabel": "PUBLIC", "one_year": 4492 },
+        { "ccSlabId": "delivery_van_private", "oldApkLabel": "PRIVATE", "one_year": 3922 }
+      ],
+      "components": {
+        "pa_owner_driver": {
+          "oldApkLabel": "PA to Owner Driver",
+          "rates": { "Yes": 275, "No": 0 }
+        },
+        "ll_paid_driver": {
+          "oldApkLabel": "LL to Paid Driver",
+          "perUnit": 50
+        },
+        "cng_tp": {
+          "oldApkLabel": "BIFUEL KIT-TP",
+          "rates": { "Yes": 60, "No": 0 }
+        },
+        "pa_unnamed_passenger": {
+          "oldApkLabel": "PA Unnamed Passengers",
+          "formula": "(number_of_passengers * sum_insured_each / 1000) * 0.6"
+        },
+        "ll_nonfare_passenger": {
+          "oldApkLabel": "LL to Non-Fare Passenger",
+          "perUnit": 75
+        },
+        "tppd_discount": {
+          "oldApkLabel": "TPPD",
+          "options": [
+            { "label": "Rs 7.5 Lakh", "discount": 0 },
+            { "label": "Rs 6000", "discount": 150 }
+          ]
+        }
+      },
+      "grossTpFormula": "basic_tp + pa_owner_driver + ll_paid_driver + pa_unnamed_passenger + cng_tp + ll_nonfare_passenger - tppd_discount"
+    }
+  },
+  "taxFormula": "service_tax = round(gross_tp * 18 / 100); total = round(gross_tp + service_tax)"
+}

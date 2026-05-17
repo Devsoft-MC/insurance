@@ -1,0 +1,407 @@
+{
+  "version": "2026-05-16",
+  "companyId": "united-india",
+  "companyName": "United India Insurance",
+  "sourcePriority": "APK values final",
+  "vehicles": {
+    "two_wheeler": {
+      "sourceClasses": ["TwoWheelerclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfBasicOdAndAccessories": 28 },
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years > 1 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ],
+          "formula": "(basic_od + electrical_accessories) * rate / 100"
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfIdv": 0.45 },
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.1 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.12 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.17 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.2 }
+          ],
+          "formula": "idv * rate / 100"
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "Roadside Assistance",
+          "flatPremium": 25
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "Return to Invoice",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfIdvAndAccessories": 0.45 },
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.25 }
+          ],
+          "formula": "(idv + non_electrical_accessories_value + electrical_accessories_value) * rate / 100"
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "maximumEmi": 50000,
+          "formula": "emi_amount * 0.02"
+        },
+        "loss_of_key": {
+          "oldApkLabel": "Loss of Key",
+          "options": [
+            { "label": "No", "premium": 0 },
+            { "label": "3000", "premium": 50, "eligibility": "age_years < 5" },
+            { "label": "3000", "premium": 200, "eligibility": "vehicle_type == 'New' and tenure == 'LONG TERM'" }
+          ]
+        },
+        "engine_protection": {
+          "oldApkLabel": "Engine Protection",
+          "eligibility": "not allowed when age >= 5 years",
+          "plans": {
+            "Standard": [
+              { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfIdv": 0.22 },
+              { "ageYears": 0, "ratePercentOfIdv": 0.05 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.06 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.07 },
+              { "ageYears": 3, "ratePercentOfIdv": 0.08 },
+              { "ageYears": 4, "ratePercentOfIdv": 0.1 }
+            ],
+            "Platinum": [
+              { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfIdv": 0.38 },
+              { "ageYears": 0, "ratePercentOfIdv": 0.07 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.09 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.12 },
+              { "ageYears": 3, "ratePercentOfIdv": 0.17 },
+              { "ageYears": 4, "ratePercentOfIdv": 0.22 }
+            ]
+          },
+          "formula": "idv * selected_plan_rate / 100"
+        }
+      }
+    },
+    "private_car": {
+      "sourceClasses": ["PrivateCarclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfBasicOdAndAccessories": 21 },
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years > 1 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ],
+          "formula": "(basic_od + cng_od + electrical_accessories) * rate / 100"
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfIdv": 0.27 },
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.1 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.12 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.17 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.2 }
+          ],
+          "formula": "idv * rate / 100"
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "RSA",
+          "flatPremium": 50
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "RTI",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "vehicle_type == 'New' and tenure == 'LONG TERM'", "ratePercentOfIdvAndAccessories": 0.45 },
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.25 }
+          ],
+          "formula": "(idv + non_electrical_accessories_value + electrical_accessories_value) * rate / 100"
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "maximumEmi": 50000,
+          "formula": "emi_amount * 0.066"
+        }
+      }
+    },
+    "auto": {
+      "sourceClasses": ["Autoclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years >= 2 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ],
+          "formula": "(basic_od + cng_od + electrical_accessories) * rate / 100"
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.18 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.22 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.25 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.3 }
+          ],
+          "formula": "idv * rate / 100"
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "RSA",
+          "flatPremium": 200
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "RTI",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.25 }
+          ],
+          "formula": "(idv + non_electrical_accessories_value + electrical_accessories_value) * rate / 100"
+        },
+        "engine_protection": {
+          "oldApkLabel": "Engine Protection",
+          "eligibility": "not allowed when age > 2 years",
+          "plans": {
+            "Platinum": [
+              { "ageYears": 0, "ratePercentOfIdv": 0.1 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.11 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.12 }
+            ],
+            "Standard": [
+              { "ageYears": 0, "ratePercentOfIdv": 0.15 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.2 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.26 }
+            ]
+          },
+          "formula": "idv * selected_plan_rate / 100"
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "formula": "emi_amount * 0.03"
+        }
+      }
+    },
+    "taxi": {
+      "sourceClasses": ["Taxiclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years >= 2 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ]
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "RTI",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.25 }
+          ]
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.18 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.22 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.25 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.3 }
+          ]
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "RSA",
+          "flatPremium": 75
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "formula": "emi_amount * 0.066"
+        },
+        "loss_of_key": {
+          "oldApkLabel": "Loss of Key",
+          "options": [
+            { "label": "No", "premium": 0 },
+            { "label": "10000", "premium": 300 },
+            { "label": "25000", "premium": 750 }
+          ]
+        },
+        "engine_protection": {
+          "oldApkLabel": "Engine Protection",
+          "eligibility": "not allowed when age > 2 years",
+          "plans": {
+            "Platinum": [
+              { "ageYears": 0, "ratePercentOfIdv": 0.1 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.11 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.12 }
+            ],
+            "Standard": [
+              { "ageYears": 0, "ratePercentOfIdv": 0.15 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.2 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.26 }
+            ]
+          }
+        }
+      }
+    },
+    "bus": {
+      "sourceClasses": ["Busclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years >= 2 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ]
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "RTI",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.25 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.3 }
+          ]
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.18 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.22 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.25 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.3 }
+          ]
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "RSA",
+          "flatPremium": 200
+        },
+        "engine_protection": {
+          "oldApkLabel": "Engine Protection",
+          "eligibility": "not allowed when age > 2 years",
+          "plans": {
+            "Platinum": [
+              { "ageYears": 0, "ratePercentOfIdv": 0.1 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.11 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.12 }
+            ],
+            "Standard": [
+              { "ageYears": 0, "ratePercentOfIdv": 0.15 },
+              { "ageYears": 1, "ratePercentOfIdv": 0.2 },
+              { "ageYears": 2, "ratePercentOfIdv": 0.26 }
+            ]
+          }
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "formula": "emi_amount * 0.03"
+        }
+      }
+    },
+    "truck": {
+      "sourceClasses": ["Truckclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years >= 2 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ]
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "RTI",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.25 }
+          ]
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.18 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.22 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.25 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.3 }
+          ]
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "RSA",
+          "flatPremium": 200
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "formula": "emi_amount * 0.03"
+        }
+      }
+    },
+    "delivery_van": {
+      "sourceClasses": ["DeliveryVanclass"],
+      "addons": {
+        "nil_depreciation": {
+          "oldApkLabel": "Nil Depreciation",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfBasicOdAndAccessories": 10 },
+            { "when": "age_years == 1", "ratePercentOfBasicOdAndAccessories": 20 },
+            { "when": "age_years >= 2 and age_years < 5", "ratePercentOfBasicOdAndAccessories": 30 }
+          ]
+        },
+        "return_to_invoice": {
+          "oldApkLabel": "RTI",
+          "eligibility": "not allowed when age >= 3 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdvAndAccessories": 0.2 },
+            { "when": "age_years == 1", "ratePercentOfIdvAndAccessories": 0.25 },
+            { "when": "age_years == 2", "ratePercentOfIdvAndAccessories": 0.3 }
+          ]
+        },
+        "consummables": {
+          "oldApkLabel": "Consummables",
+          "eligibility": "not allowed when age >= 5 years",
+          "rules": [
+            { "when": "age_years == 0", "ratePercentOfIdv": 0.15 },
+            { "when": "age_years == 1", "ratePercentOfIdv": 0.18 },
+            { "when": "age_years == 2", "ratePercentOfIdv": 0.22 },
+            { "when": "age_years == 3", "ratePercentOfIdv": 0.25 },
+            { "when": "age_years == 4", "ratePercentOfIdv": 0.3 }
+          ]
+        },
+        "road_side_assistance": {
+          "oldApkLabel": "RSA",
+          "flatPremium": 200
+        },
+        "emi_protect": {
+          "oldApkLabel": "EMI Protect",
+          "formula": "emi_amount * 0.03"
+        }
+      }
+    }
+  }
+}

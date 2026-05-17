@@ -1,0 +1,9 @@
+{
+  "companyId": "united_india",
+  "taxLabel": "Service Tax",
+  "displayTaxLabel": "GST / Service Tax",
+  "ratePercent": 18,
+  "country": "India",
+  "status": "final_for_initial_build",
+  "formula": "round(net_premium * ratePercent / 100)"
+}

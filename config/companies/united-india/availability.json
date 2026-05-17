@@ -1,0 +1,58 @@
+[
+  {
+    "companyId": "united_india",
+    "vehicleId": "two_wheeler",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy", "standalone_od", "bundled"],
+    "tenureIds": ["one_year", "five_years"],
+    "sourceClasses": ["TwoWheelerclass", "Twowheelerliabilityclass"]
+  },
+  {
+    "companyId": "united_india",
+    "vehicleId": "private_car",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy", "standalone_od", "bundled", "long_term"],
+    "tenureIds": ["one_year", "three_years"],
+    "sourceClasses": ["PrivateCarclass", "PrivateCarliabilityclass"]
+  },
+  {
+    "companyId": "united_india",
+    "vehicleId": "auto",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy"],
+    "tenureIds": ["one_year"],
+    "sourceClasses": ["Autoclass", "Autoliabilityclass"]
+  },
+  {
+    "companyId": "united_india",
+    "vehicleId": "taxi",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy"],
+    "tenureIds": ["one_year"],
+    "sourceClasses": ["Taxiclass", "Taxiliabilityclass"]
+  },
+  {
+    "companyId": "united_india",
+    "vehicleId": "bus",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy"],
+    "tenureIds": ["one_year"],
+    "sourceClasses": ["Busclass", "Busliabilityclass"]
+  },
+  {
+    "companyId": "united_india",
+    "vehicleId": "truck",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy"],
+    "tenureIds": ["one_year"],
+    "sourceClasses": ["Truckclass", "Truckliabilityclass"]
+  },
+  {
+    "companyId": "united_india",
+    "vehicleId": "delivery_van",
+    "enabled": true,
+    "policyTypeIds": ["liability_policy", "package_policy"],
+    "tenureIds": ["one_year"],
+    "sourceClasses": ["DeliveryVanclass", "DeliveryVanliabilityclass"]
+  }
+]

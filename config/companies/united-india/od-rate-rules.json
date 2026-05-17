@@ -1,0 +1,193 @@
+{
+  "version": "2026-05-16",
+  "companyId": "united-india",
+  "companyName": "United India Insurance",
+  "sourcePriority": "APK values final",
+  "rounding": {
+    "intermediate": "round2 where APK used DecimalFormat 0.00",
+    "tax": "round",
+    "total": "round"
+  },
+  "discountRules": {
+    "anti_theft": {
+      "source": "inferred from APK output",
+      "type": "percent",
+      "ratePercent": 2.5,
+      "base": "od_after_od_discount",
+      "rounding": "round2"
+    },
+    "automobile_association": {
+      "source": "inferred from APK output",
+      "type": "flat",
+      "amount": 50
+    }
+  },
+  "vehicles": {
+    "two_wheeler": {
+      "sourceClasses": ["TwoWheelerclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "normalAndPreOwnedRatesPercent": [
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "tw_lt_75": 1.676, "tw_76_150": 1.676, "tw_151_300": 1.76, "tw_301_350": 1.76, "tw_gt_350": 1.844 },
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "tw_lt_75": 1.708, "tw_76_150": 1.708, "tw_151_300": 1.793, "tw_301_350": 1.793, "tw_gt_350": 1.879 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "tw_lt_75": 1.76, "tw_76_150": 1.76, "tw_151_300": 1.848, "tw_301_350": 1.848, "tw_gt_350": 1.936 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "tw_lt_75": 1.793, "tw_76_150": 1.793, "tw_151_300": 1.883, "tw_301_350": 1.883, "tw_gt_350": 1.973 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "tw_lt_75": 1.802, "tw_76_150": 1.802, "tw_151_300": 1.892, "tw_301_350": 1.892, "tw_gt_350": 1.982 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "tw_lt_75": 1.836, "tw_76_150": 1.836, "tw_151_300": 1.928, "tw_301_350": 1.928, "tw_gt_350": 2.02 }
+      ],
+      "newVehicleLongTermRatesPercent": [
+        { "zone": "Zone B", "tw_lt_75": 4.1, "tw_76_150": 4.1, "tw_151_300": 4.35, "tw_301_350": 4.35, "tw_gt_350": 4.55 },
+        { "zone": "Zone A", "tw_lt_75": 4.2, "tw_76_150": 4.2, "tw_151_300": 4.4, "tw_301_350": 4.4, "tw_gt_350": 4.65 }
+      ],
+      "formulas": {
+        "idv_premium": "round2((idv / 100) * basic_od_rate)",
+        "non_electrical_accessories": "round2((non_electrical_accessories_value / 100) * basic_od_rate)",
+        "basic_od": "round2(idv_premium + non_electrical_accessories)",
+        "electrical_accessories": "electrical_accessories_value * (0.0984 if vehicle_type == 'New' and tenure == 'LONG TERM' else 0.04)",
+        "od_discount": "basic_od * od_discount_percent / 100",
+        "od_premium": "basic_od + electrical_accessories - od_discount",
+        "cover_od_premium": "basic_od + electrical_accessories + nil_depreciation + return_to_invoice",
+        "cover_od_discount": "od_discount + anti_theft_discount + automobile_association_discount + voluntary_deductible_discount",
+        "base_of_ncb": "cover_od_premium - cover_od_discount",
+        "gross_od": "round(base_of_ncb + engine_protection + loss_of_key + consummables + road_side_assistance + emi_protect - ncb_discount)"
+      }
+    },
+    "private_car": {
+      "sourceClasses": ["PrivateCarclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "normalAndPreOwnedRatesPercent": [
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "pc_lt_1000": 3.039, "pc_1001_1500": 3.191, "pc_gt_1500": 3.343 },
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "pc_lt_1000": 3.127, "pc_1001_1500": 3.283, "pc_gt_1500": 3.44 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "pc_lt_1000": 3.191, "pc_1001_1500": 3.351, "pc_gt_1500": 3.51 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "pc_lt_1000": 3.283, "pc_1001_1500": 3.447, "pc_gt_1500": 3.612 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "pc_lt_1000": 3.267, "pc_1001_1500": 3.43, "pc_gt_1500": 3.594 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "pc_lt_1000": 3.362, "pc_1001_1500": 3.529, "pc_gt_1500": 3.698 }
+      ],
+      "newVehicleLongTermRatesPercent": [
+        { "zone": "Zone B", "pc_lt_1000": 6.26, "pc_1001_1500": 6.573, "pc_gt_1500": 6.886 },
+        { "zone": "Zone A", "pc_lt_1000": 6.442, "pc_1001_1500": 6.763, "pc_gt_1500": 7.086 }
+      ],
+      "formulas": {
+        "idv_premium": "round2((idv / 100) * basic_od_rate)",
+        "non_electrical_accessories": "round2((non_electrical_accessories_value / 100) * basic_od_rate)",
+        "basic_od": "round2(idv_premium + non_electrical_accessories)",
+        "electrical_accessories": "electrical_accessories_value * (0.0824 if vehicle_type == 'New' and tenure == 'LONG TERM' else 0.04)",
+        "cng_od": "cng_value * (0.0824 if vehicle_type == 'New' and tenure == 'LONG TERM' else 0.04)",
+        "cng_tp": "60 if cng_value > 0 else 0",
+        "od_discount": "basic_od * od_discount_percent / 100",
+        "od_premium": "basic_od + electrical_accessories + cng_od - od_discount"
+      }
+    },
+    "auto": {
+      "sourceClasses": ["Autoclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "ratesPercent": [
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "rate": 1.278 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "rate": 1.31 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "rate": 1.342 },
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "rate": 1.272 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "rate": 1.304 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "rate": 1.336 },
+        { "zone": "Zone C", "ageBandId": "age_lt_5", "rate": 1.26 },
+        { "zone": "Zone C", "ageBandId": "age_5_10", "rate": 1.292 },
+        { "zone": "Zone C", "ageBandId": "age_gte_10", "rate": 1.323 }
+      ],
+      "formulas": {
+        "idv_premium": "(idv / 100) * basic_od_rate",
+        "non_electrical_accessories": "(non_electrical_accessories_value / 100) * basic_od_rate",
+        "basic_od": "idv_premium + non_electrical_accessories",
+        "electrical_accessories": "electrical_accessories_value * 0.04",
+        "cng_od": "cng_value * 0.04",
+        "cng_tp": "60 if cng_value > 0 else 0",
+        "built_in_bifuel_cng_od_loading": "od_premium * 0.05",
+        "built_in_bifuel_cng_tp_loading": "60 if built_in_bifuel_kit == true else 0",
+        "od_discount": "basic_od * od_discount_percent / 100",
+        "od_premium": "basic_od + electrical_accessories + cng_od - od_discount"
+      }
+    },
+    "taxi": {
+      "sourceClasses": ["Taxiclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "normalAndPreOwnedRatesPercent": [
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "taxi_lt_1000": 3.191, "taxi_1001_1500": 3.351, "taxi_gt_1500": 3.51 },
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "taxi_lt_1000": 3.284, "taxi_1001_1500": 3.448, "taxi_gt_1500": 3.612 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "taxi_lt_1000": 3.271, "taxi_1001_1500": 3.435, "taxi_gt_1500": 3.598 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "taxi_lt_1000": 3.366, "taxi_1001_1500": 3.534, "taxi_gt_1500": 3.703 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "taxi_lt_1000": 3.351, "taxi_1001_1500": 3.519, "taxi_gt_1500": 3.686 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "taxi_lt_1000": 3.448, "taxi_1001_1500": 3.62, "taxi_gt_1500": 3.793 }
+      ]
+    },
+    "bus": {
+      "sourceClasses": ["Busclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "ratesPercent": [
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "rate": 1.68 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "rate": 1.722 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "rate": 1.764 },
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "rate": 1.672 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "rate": 1.714 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "rate": 1.765 },
+        { "zone": "Zone C", "ageBandId": "age_lt_5", "rate": 1.656 },
+        { "zone": "Zone C", "ageBandId": "age_5_10", "rate": 1.697 },
+        { "zone": "Zone C", "ageBandId": "age_gte_10", "rate": 1.739 }
+      ]
+    },
+    "truck": {
+      "sourceClasses": ["Truckclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "ratesPercent": [
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "rate": 1.751 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "rate": 1.795 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "rate": 1.839 },
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "rate": 1.743 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "rate": 1.787 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "rate": 1.83 },
+        { "zone": "Zone C", "ageBandId": "age_lt_5", "rate": 1.726 },
+        { "zone": "Zone C", "ageBandId": "age_5_10", "rate": 1.77 },
+        { "zone": "Zone C", "ageBandId": "age_gte_10", "rate": 1.812 }
+      ]
+    },
+    "delivery_van": {
+      "sourceClasses": ["DeliveryVanclass"],
+      "ageBands": [
+        { "id": "age_lt_5", "oldApkLabel": "< 5 years", "minYears": 0, "maxYearsExclusive": 5 },
+        { "id": "age_5_10", "oldApkLabel": "5-10 years", "minYears": 5, "maxYearsExclusive": 10 },
+        { "id": "age_gte_10", "oldApkLabel": ">= 10 years", "minYears": 10, "maxYearsExclusive": null }
+      ],
+      "normalAndPreOwnedRatesPercent": [
+        { "zone": "Zone A", "ageBandId": "age_lt_5", "delivery_van_public": 1.664, "delivery_van_private": 1.165 },
+        { "zone": "Zone A", "ageBandId": "age_5_10", "delivery_van_public": 1.706, "delivery_van_private": 1.194 },
+        { "zone": "Zone A", "ageBandId": "age_gte_10", "delivery_van_public": 1.747, "delivery_van_private": 1.223 },
+        { "zone": "Zone B", "ageBandId": "age_lt_5", "delivery_van_public": 1.656, "delivery_van_private": 1.159 },
+        { "zone": "Zone B", "ageBandId": "age_5_10", "delivery_van_public": 1.697, "delivery_van_private": 1.188 },
+        { "zone": "Zone B", "ageBandId": "age_gte_10", "delivery_van_public": 1.739, "delivery_van_private": 1.217 },
+        { "zone": "Zone C", "ageBandId": "age_lt_5", "delivery_van_public": 1.64, "delivery_van_private": 1.148 },
+        { "zone": "Zone C", "ageBandId": "age_5_10", "delivery_van_public": 1.681, "delivery_van_private": 1.177 },
+        { "zone": "Zone C", "ageBandId": "age_gte_10", "delivery_van_public": 1.772, "delivery_van_private": 1.205 }
+      ]
+    }
+  }
+}

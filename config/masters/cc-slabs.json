@@ -1,0 +1,146 @@
+[
+  {
+    "id": "two_wheeler_lt_75cc",
+    "vehicleId": "two_wheeler",
+    "slabType": "cubic_capacity",
+    "name": "< 75 CC",
+    "description": "NOT EXCEEDING 75CC",
+    "sortOrder": 1
+  },
+  {
+    "id": "two_wheeler_76_150cc",
+    "vehicleId": "two_wheeler",
+    "slabType": "cubic_capacity",
+    "name": "76-150 CC",
+    "sortOrder": 2
+  },
+  {
+    "id": "two_wheeler_151_300cc",
+    "vehicleId": "two_wheeler",
+    "slabType": "cubic_capacity",
+    "name": "151-300 CC",
+    "sortOrder": 3
+  },
+  {
+    "id": "two_wheeler_301_350cc",
+    "vehicleId": "two_wheeler",
+    "slabType": "cubic_capacity",
+    "name": "301-350 CC",
+    "sortOrder": 4
+  },
+  {
+    "id": "two_wheeler_gt_350cc",
+    "vehicleId": "two_wheeler",
+    "slabType": "cubic_capacity",
+    "name": "Exceeding 350 CC",
+    "sortOrder": 5
+  },
+  {
+    "id": "private_car_lt_1000cc",
+    "vehicleId": "private_car",
+    "slabType": "cubic_capacity",
+    "name": "< 1000 CC",
+    "sortOrder": 1
+  },
+  {
+    "id": "private_car_1001_1500cc",
+    "vehicleId": "private_car",
+    "slabType": "cubic_capacity",
+    "name": "1001-1500 CC",
+    "sortOrder": 2
+  },
+  {
+    "id": "private_car_gt_1500cc",
+    "vehicleId": "private_car",
+    "slabType": "cubic_capacity",
+    "name": "Exceeding 1500 CC",
+    "sortOrder": 3
+  },
+  {
+    "id": "auto_seating_capacity_1_6",
+    "vehicleId": "auto",
+    "slabType": "seating_capacity",
+    "name": "1-6",
+    "description": "Seating capacity excluding driver",
+    "allowedValues": [1, 2, 3, 4, 5, 6],
+    "sortOrder": 1
+  },
+  {
+    "id": "taxi_lt_1000cc",
+    "vehicleId": "taxi",
+    "slabType": "cubic_capacity",
+    "name": "< 1000 CC",
+    "sortOrder": 1
+  },
+  {
+    "id": "taxi_1001_1500cc",
+    "vehicleId": "taxi",
+    "slabType": "cubic_capacity",
+    "name": "1001-1500 CC",
+    "sortOrder": 2
+  },
+  {
+    "id": "taxi_gt_1500cc",
+    "vehicleId": "taxi",
+    "slabType": "cubic_capacity",
+    "name": "Exceeding 1500 CC",
+    "sortOrder": 3
+  },
+  {
+    "id": "bus_over_6_passengers",
+    "vehicleId": "bus",
+    "slabType": "seating_capacity",
+    "name": "> 6 Passengers",
+    "description": "4WH PCV greater than 6 passengers",
+    "sortOrder": 1
+  },
+  {
+    "id": "truck_gvw_lt_7500",
+    "vehicleId": "truck",
+    "slabType": "gross_vehicle_weight",
+    "name": "< 7500 Kg",
+    "sortOrder": 1
+  },
+  {
+    "id": "truck_gvw_7501_12000",
+    "vehicleId": "truck",
+    "slabType": "gross_vehicle_weight",
+    "name": "7501-12000 Kg",
+    "sortOrder": 2
+  },
+  {
+    "id": "truck_gvw_12001_20000",
+    "vehicleId": "truck",
+    "slabType": "gross_vehicle_weight",
+    "name": "12001-20000 Kg",
+    "sortOrder": 3
+  },
+  {
+    "id": "truck_gvw_20001_40000",
+    "vehicleId": "truck",
+    "slabType": "gross_vehicle_weight",
+    "name": "20001-40000 Kg",
+    "sortOrder": 4
+  },
+  {
+    "id": "truck_gvw_gt_40000",
+    "vehicleId": "truck",
+    "slabType": "gross_vehicle_weight",
+    "name": "Exceeding 40000 Kg",
+    "sortOrder": 5
+  },
+  {
+    "id": "delivery_van_public",
+    "vehicleId": "delivery_van",
+    "slabType": "carrier_type",
+    "name": "PUBLIC",
+    "sortOrder": 1
+  },
+  {
+    "id": "delivery_van_private",
+    "vehicleId": "delivery_van",
+    "slabType": "carrier_type",
+    "name": "PRIVATE",
+    "sortOrder": 2
+  }
+]

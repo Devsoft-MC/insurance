@@ -1,0 +1,10 @@
+{
+  "companyId": "united_india",
+  "quoteTitle": "United India Insurance Premium Summary",
+  "currency": "INR",
+  "currencySymbol": "₹",
+  "dateFormat": "dd-MM-yyyy",
+  "footerNote": "AT UNITED INDIA,IT'S ALWAYS U BEFORE I",
+  "includeAdvisorProfile": true,
+  "advisorProfileStatus": "pending_advisor_sheet"
+}

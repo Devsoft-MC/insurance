@@ -1,0 +1,37 @@
+[
+  {
+    "id": "liability_policy",
+    "name": "Liability Policy",
+    "apkLabels": ["Liability Policy", "Liability Only"],
+    "covers": ["third_party"],
+    "description": "Third-party liability only policy."
+  },
+  {
+    "id": "package_policy",
+    "name": "Package Policy",
+    "apkLabels": ["Package Policy", "1 YEAR PACKAGE"],
+    "covers": ["own_damage", "third_party"],
+    "description": "Own damage plus third-party liability package policy."
+  },
+  {
+    "id": "standalone_od",
+    "name": "Standalone OD",
+    "apkLabels": ["STANDALONE OD", "Standalone"],
+    "covers": ["own_damage"],
+    "description": "Standalone own-damage policy."
+  },
+  {
+    "id": "bundled",
+    "name": "Bundled",
+    "apkLabels": ["BUNDLED", "Bundled"],
+    "covers": ["own_damage", "third_party"],
+    "description": "Bundled policy variant used for new vehicles."
+  },
+  {
+    "id": "long_term",
+    "name": "Long Term",
+    "apkLabels": ["LONG TERM"],
+    "covers": ["own_damage", "third_party"],
+    "description": "Long-term policy variant used in the APK for new private cars."
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "pa_owner_driver",
+    "name": "PA Owner-Driver",
+    "category": "liability"
+  },
+  {
+    "id": "ll_paid_driver",
+    "name": "LL to Paid driver",
+    "category": "liability"
+  },
+  {
+    "id": "ll_employees",
+    "name": "LL to Employees of Insured",
+    "category": "liability"
+  },
+  {
+    "id": "ll_passenger",
+    "name": "LL to Passenger",
+    "category": "liability"
+  },
+  {
+    "id": "pa_unnamed_passengers",
+    "name": "PA to Unnamed Pasengers",
+    "category": "liability"
+  },
+  {
+    "id": "tppd_cover",
+    "name": "TPPD Cover",
+    "category": "liability"
+  },
+  {
+    "id": "nil_depreciation",
+    "name": "Nil Depreciation",
+    "category": "own_damage"
+  },
+  {
+    "id": "return_to_invoice",
+    "name": "Return to Invoice",
+    "category": "own_damage"
+  },
+  {
+    "id": "engine_protection",
+    "name": "Engine Protection",
+    "category": "own_damage"
+  },
+  {
+    "id": "consummables",
+    "name": "Consummables",
+    "category": "own_damage"
+  },
+  {
+    "id": "road_side_assistance",
+    "name": "Roadside Assistance",
+    "category": "own_damage"
+  },
+  {
+    "id": "loss_of_key",
+    "name": "Loss of Key",
+    "category": "own_damage"
+  },
+  {
+    "id": "emi_protect",
+    "name": "EMI Value",
+    "category": "own_damage"
+  },
+  {
+    "id": "electrical_accessories",
+    "name": "Electrical Accessories",
+    "category": "own_damage"
+  },
+  {
+    "id": "non_electrical_accessories",
+    "name": "Non-Electrical Accessories",
+    "category": "own_damage"
+  },
+  {
+    "id": "built_in_bifuel_kit",
+    "name": "Built-In Bifuel Kit(CNG/LPG)",
+    "category": "own_damage"
+  },
+  {
+    "id": "bifuel_cng_lpg_kit",
+    "name": "Bifuel CNG/LPG Kit",
+    "category": "own_damage"
+  },
+  {
+    "id": "od_discount",
+    "name": "OD Discount(%)",
+    "category": "discount"
+  },
+  {
+    "id": "no_claim_bonus",
+    "name": "No Claim Bonus(%)",
+    "category": "discount"
+  },
+  {
+    "id": "anti_theft",
+    "name": "Anti-Theft",
+    "category": "discount"
+  },
+  {
+    "id": "automobile_association",
+    "name": "Automobile Association",
+    "category": "discount"
+  },
+  {
+    "id": "voluntary_deductible",
+    "name": "Voluntary Deductible",
+    "category": "discount"
+  }
+]

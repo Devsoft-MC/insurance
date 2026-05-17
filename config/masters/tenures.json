@@ -1,0 +1,20 @@
+[
+  {
+    "id": "one_year",
+    "name": "One Year",
+    "apkLabels": ["ONE YEAR", "1 YEAR"],
+    "years": 1
+  },
+  {
+    "id": "three_years",
+    "name": "Three Years",
+    "apkLabels": ["THREE YEARS", "3 YEARS"],
+    "years": 3
+  },
+  {
+    "id": "five_years",
+    "name": "Five Years",
+    "apkLabels": ["FIVE YEARS", "5 YEARS"],
+    "years": 5
+  }
+]

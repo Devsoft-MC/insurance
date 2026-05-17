@@ -1,21 +1,26 @@
 import { StyleSheet } from "react-native";
 
 export const colors = {
-  blue: "#2695db",
-  deepBlue: "#0b83cb",
-  orange: "#ff720f",
-  red: "#ad2531",
-  ink: "#0f172a"
+  blue: "#2dd4bf",
+  deepBlue: "#0f766e",
+  emerald: "#10b981",
+  orange: "#f59e0b",
+  red: "#f87171",
+  ink: "#e8fff6",
+  surface: "#0f211b",
+  card: "#142b23",
+  line: "#24483c",
+  muted: "#95b8aa"
 };
 
 export const styles = StyleSheet.create({
   app: {
     flex: 1,
-    backgroundColor: colors.blue
+    backgroundColor: "#07130f"
   },
   shell: {
     flex: 1,
-    backgroundColor: "#f6f8fd"
+    backgroundColor: "#07130f"
   },
   content: {
     paddingHorizontal: 18,
@@ -26,8 +31,10 @@ export const styles = StyleSheet.create({
     paddingBottom: 24
   },
   welcome: {
-    backgroundColor: colors.blue,
+    backgroundColor: colors.surface,
+    borderColor: colors.line,
     borderRadius: 8,
+    borderWidth: 1,
     flex: 1,
     minHeight: 720,
     overflow: "hidden",
@@ -41,7 +48,7 @@ export const styles = StyleSheet.create({
     marginTop: 60
   },
   welcomeCopy: {
-    color: "#d9f1ff",
+    color: colors.muted,
     fontSize: 14,
     lineHeight: 20,
     marginTop: 14,
@@ -54,7 +61,7 @@ export const styles = StyleSheet.create({
     marginTop: 18
   },
   ringLarge: {
-    borderColor: "rgba(255,255,255,0.08)",
+    borderColor: "rgba(16,185,129,0.11)",
     borderRadius: 130,
     borderWidth: 36,
     height: 260,
@@ -62,7 +69,7 @@ export const styles = StyleSheet.create({
     width: 260
   },
   ringSmall: {
-    backgroundColor: "rgba(255,255,255,0.10)",
+    backgroundColor: "rgba(45,212,191,0.11)",
     borderRadius: 86,
     height: 172,
     position: "absolute",
@@ -81,7 +88,7 @@ export const styles = StyleSheet.create({
   },
   vehicleBody: {
     alignItems: "center",
-    backgroundColor: "#1b9ee7",
+    backgroundColor: "#21c58a",
     borderRadius: 8,
     height: 116,
     justifyContent: "center",
@@ -94,7 +101,7 @@ export const styles = StyleSheet.create({
     zIndex: 2
   },
   vehicleHighlight: {
-    backgroundColor: "#50c5ff",
+    backgroundColor: "#7cf6c6",
     borderRadius: 8,
     height: 34,
     left: 22,
@@ -118,13 +125,15 @@ export const styles = StyleSheet.create({
     marginTop: "auto"
   },
   whiteButtonText: {
-    color: colors.deepBlue,
+    color: "#073f31",
     fontSize: 15,
     fontWeight: "900"
   },
   topBar: {
     alignItems: "center",
-    backgroundColor: colors.blue,
+    backgroundColor: "#0b1a15",
+    borderBottomColor: colors.line,
+    borderBottomWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     minHeight: 64,
@@ -159,15 +168,15 @@ export const styles = StyleSheet.create({
     marginTop: 6
   },
   stepCopy: {
-    color: "#64748b",
+    color: colors.muted,
     fontSize: 14,
     lineHeight: 20,
     marginTop: 8
   },
   companyCard: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1.5,
     flexDirection: "row",
@@ -176,8 +185,8 @@ export const styles = StyleSheet.create({
     padding: 14
   },
   companyCardActive: {
-    borderColor: colors.blue,
-    backgroundColor: "#eef8ff"
+    borderColor: colors.emerald,
+    backgroundColor: "#16382d"
   },
   logoBadge: {
     alignItems: "center",
@@ -195,7 +204,7 @@ export const styles = StyleSheet.create({
     fontWeight: "900"
   },
   muted: {
-    color: "#64748b",
+    color: colors.muted,
     fontSize: 12,
     fontWeight: "700",
     lineHeight: 17,
@@ -214,8 +223,8 @@ export const styles = StyleSheet.create({
   },
   vehicleChoice: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1.5,
     flex: 1,
@@ -224,11 +233,11 @@ export const styles = StyleSheet.create({
     padding: 12
   },
   vehicleChoiceActive: {
-    backgroundColor: colors.blue,
-    borderColor: colors.blue
+    backgroundColor: "#0f7a57",
+    borderColor: colors.emerald
   },
   vehicleChoiceText: {
-    color: colors.blue,
+    color: colors.ink,
     fontSize: 14,
     fontWeight: "900",
     marginTop: 12,
@@ -246,8 +255,8 @@ export const styles = StyleSheet.create({
   },
   optionRow: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
@@ -257,21 +266,70 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 14
   },
   optionRowActive: {
-    borderColor: colors.blue,
-    backgroundColor: "#eef8ff"
+    borderColor: colors.emerald,
+    backgroundColor: "#16382d"
+  },
+  optionBody: {
+    flex: 1,
+    paddingRight: 12
   },
   optionText: {
-    color: "#334155",
+    color: colors.ink,
     fontSize: 14,
     fontWeight: "800"
   },
   optionTextActive: {
-    color: colors.blue
+    color: "#7cf6c6"
+  },
+  optionHint: {
+    color: colors.muted,
+    fontSize: 11,
+    fontWeight: "700",
+    marginTop: 4
+  },
+  segmentRow: {
+    flexDirection: "row",
+    gap: 10,
+    marginBottom: 14
+  },
+  segmentRowWrap: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    marginBottom: 14
+  },
+  segment: {
+    alignItems: "center",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    flex: 1,
+    minHeight: 46,
+    justifyContent: "center",
+    paddingHorizontal: 10
+  },
+  segmentActive: {
+    backgroundColor: "#0f7a57",
+    borderColor: colors.emerald
+  },
+  segmentCompact: {
+    flexBasis: "30%",
+    flexGrow: 1
+  },
+  segmentText: {
+    color: colors.muted,
+    fontSize: 12,
+    fontWeight: "900",
+    textAlign: "center"
+  },
+  segmentTextActive: {
+    color: "#ffffff"
   },
   summaryMini: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
@@ -288,14 +346,14 @@ export const styles = StyleSheet.create({
     marginBottom: 13
   },
   inputLabel: {
-    color: "#334155",
+    color: colors.ink,
     fontSize: 12,
     fontWeight: "900",
     marginBottom: 7
   },
   input: {
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     color: colors.ink,
@@ -304,8 +362,18 @@ export const styles = StyleSheet.create({
     height: 52,
     paddingHorizontal: 14
   },
+  fieldError: {
+    color: colors.red,
+    fontSize: 12,
+    fontWeight: "800",
+    lineHeight: 17,
+    marginBottom: 2,
+    marginTop: 4
+  },
   upgradeHero: {
-    backgroundColor: colors.blue,
+    backgroundColor: colors.surface,
+    borderColor: colors.line,
+    borderWidth: 1,
     borderRadius: 8,
     minHeight: 248,
     overflow: "hidden",
@@ -329,8 +397,8 @@ export const styles = StyleSheet.create({
   },
   companyStrip: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
@@ -341,14 +409,23 @@ export const styles = StyleSheet.create({
   },
   addonRow: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#e4edf5",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 10,
     padding: 14
+  },
+  inlineAddonFields: {
+    backgroundColor: "#0f211b",
+    borderColor: colors.line,
+    borderRadius: 8,
+    borderWidth: 1,
+    marginBottom: 10,
+    marginTop: -6,
+    padding: 12
   },
   addonText: {
     flex: 1,
@@ -360,14 +437,14 @@ export const styles = StyleSheet.create({
     fontWeight: "900"
   },
   addonCopy: {
-    color: "#8b98a8",
+    color: colors.muted,
     fontSize: 11,
     lineHeight: 16,
     marginTop: 5
   },
   addonButton: {
     alignItems: "center",
-    borderColor: "#9fb0bd",
+    borderColor: colors.line,
     borderRadius: 999,
     borderWidth: 1,
     flexDirection: "row",
@@ -376,8 +453,8 @@ export const styles = StyleSheet.create({
     paddingVertical: 8
   },
   addonButtonSelected: {
-    backgroundColor: colors.blue,
-    borderColor: colors.blue
+    backgroundColor: colors.emerald,
+    borderColor: colors.emerald
   },
   addonPrice: {
     color: colors.ink,
@@ -389,8 +466,8 @@ export const styles = StyleSheet.create({
   },
   totalBar: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
@@ -399,7 +476,7 @@ export const styles = StyleSheet.create({
     padding: 14
   },
   totalLabel: {
-    color: "#8b98a8",
+    color: colors.muted,
     fontSize: 12,
     fontWeight: "800"
   },
@@ -410,7 +487,7 @@ export const styles = StyleSheet.create({
     marginTop: 4
   },
   continueButton: {
-    backgroundColor: colors.blue,
+    backgroundColor: colors.emerald,
     borderRadius: 999,
     paddingHorizontal: 24,
     paddingVertical: 13
@@ -422,8 +499,8 @@ export const styles = StyleSheet.create({
   },
   reviewCard: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: colors.blue,
+    backgroundColor: colors.card,
+    borderColor: colors.emerald,
     borderRadius: 8,
     borderWidth: 1.5,
     flexDirection: "row",
@@ -436,8 +513,8 @@ export const styles = StyleSheet.create({
   },
   amountLine: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
@@ -446,7 +523,7 @@ export const styles = StyleSheet.create({
     padding: 14
   },
   amountLabel: {
-    color: "#64748b",
+    color: colors.muted,
     fontSize: 13,
     fontWeight: "800"
   },
@@ -456,8 +533,8 @@ export const styles = StyleSheet.create({
     fontWeight: "900"
   },
   emptyBox: {
-    backgroundColor: "#ffffff",
-    borderColor: "#dbe7f1",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     marginBottom: 10,
@@ -465,8 +542,8 @@ export const styles = StyleSheet.create({
   },
   cartRow: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
-    borderColor: "#e4edf5",
+    backgroundColor: colors.card,
+    borderColor: colors.line,
     borderRadius: 8,
     borderWidth: 1,
     flexDirection: "row",
@@ -506,14 +583,84 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: "900"
   },
+  summarySection: {
+    marginBottom: 12
+  },
+  summarySectionTitle: {
+    backgroundColor: colors.surface,
+    borderColor: colors.line,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    borderWidth: 1,
+    color: colors.ink,
+    fontSize: 14,
+    fontWeight: "900",
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    textAlign: "center"
+  },
+  summarySectionTitlePink: {
+    backgroundColor: colors.surface
+  },
+  summaryLine: {
+    alignItems: "center",
+    backgroundColor: colors.card,
+    borderBottomColor: colors.line,
+    borderLeftColor: colors.line,
+    borderRightColor: colors.line,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    minHeight: 32,
+    paddingHorizontal: 10,
+    paddingVertical: 6
+  },
+  summaryLineOrange: {
+    backgroundColor: "#0f7a57"
+  },
+  summaryLineGray: {
+    backgroundColor: colors.surface
+  },
+  summaryLineGreen: {
+    backgroundColor: colors.emerald
+  },
+  summaryLineLabel: {
+    color: colors.muted,
+    flex: 1,
+    fontSize: 13,
+    fontWeight: "700",
+    paddingRight: 10
+  },
+  summaryLineValue: {
+    color: colors.ink,
+    fontSize: 13,
+    fontWeight: "800",
+    textAlign: "right"
+  },
+  summaryRemoveButton: {
+    alignItems: "center",
+    borderColor: colors.red,
+    borderRadius: 999,
+    borderWidth: 1,
+    height: 24,
+    justifyContent: "center",
+    marginLeft: 8,
+    width: 24
+  },
+  summaryLineLabelStrong: {
+    color: "#ffffff",
+    fontWeight: "900"
+  },
   grandTotal: {
-    backgroundColor: colors.blue,
+    backgroundColor: "#0f7a57",
     borderRadius: 8,
     marginTop: 10,
     padding: 18
   },
   grandTotalLabel: {
-    color: "#d9f1ff",
+    color: "#d8fff0",
     fontSize: 13,
     fontWeight: "900"
   },
@@ -525,7 +672,7 @@ export const styles = StyleSheet.create({
   },
   footerButton: {
     alignItems: "center",
-    backgroundColor: colors.blue,
+    backgroundColor: colors.emerald,
     borderRadius: 8,
     flexDirection: "row",
     gap: 8,

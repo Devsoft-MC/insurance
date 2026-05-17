@@ -1,0 +1,15 @@
+{
+  "id": "united_india",
+  "sourceCompanyId": "PSU1003",
+  "name": "United India Insurance",
+  "legalName": "United India Insurance",
+  "address": "24 Whites Road, Chennai – 600014",
+  "phone": "+91-44-28520990",
+  "email": "customercare@uiic.co.in",
+  "source": {
+    "excelFile": "/Users/manojchendran/Downloads/Insurance table1.xlsx",
+    "excelSheet": "companies",
+    "apkApp": "UIIC Vehicle Insurance",
+    "apkPackage": "com.rmg.indianmotorcalculator"
+  }
+}

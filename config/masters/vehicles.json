@@ -1,0 +1,90 @@
+{
+  "version": "2026-05-16",
+  "source": "Insurance table1.xlsx and UIIC Vehicle Insurance APK",
+  "vehicles": [
+    {
+      "id": "two_wheeler",
+      "sourceVehicleId": "2WV1000",
+      "displayName": "Two Wheeler",
+      "oldApkTerms": ["Two Wheeler", "TW"],
+      "apkClasses": [
+        "TwoWheelerclass",
+        "Twowheelerliabilityclass",
+        "Twowheelerpackageliabilityclass"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "private_car",
+      "sourceVehicleId": "PCV1000",
+      "displayName": "Private Car",
+      "oldApkTerms": ["Private Car", "PC"],
+      "apkClasses": [
+        "PrivateCarclass",
+        "PrivateCarliabilityclass",
+        "Privatecarpackageliabilityclass"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "auto",
+      "sourceVehicleId": "3WV1000",
+      "displayName": "Auto",
+      "oldApkTerms": ["Auto", "3 Wheeler"],
+      "apkClasses": [
+        "Autoclass",
+        "Autoliabilityclass",
+        "Autopackageliabilityclass"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "taxi",
+      "sourceVehicleId": "4WHPCVLT6",
+      "displayName": "Taxi",
+      "oldApkTerms": ["Taxi", "4WH PCV(<6 Passengers)"],
+      "apkClasses": [
+        "Taxiclass",
+        "Taxiliabilityclass",
+        "Taxipackageliabilityclass"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "bus",
+      "sourceVehicleId": "4WHPCVGT6",
+      "displayName": "Bus",
+      "oldApkTerms": ["Bus", "4WH PCV(>6 Passengers)"],
+      "apkClasses": [
+        "Busclass",
+        "Busliabilityclass",
+        "Buspackageliabilityclass"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "truck",
+      "sourceVehicleId": "4WHGCV",
+      "displayName": "Truck",
+      "oldApkTerms": ["Truck", "4WH GCV"],
+      "apkClasses": [
+        "Truckclass",
+        "Truckliabilityclass",
+        "Truckpackageliabilityclass"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "delivery_van",
+      "sourceVehicleId": "3WHGCV",
+      "displayName": "Delivery Van",
+      "oldApkTerms": ["Delivery Van", "3WH GCV"],
+      "apkClasses": [
+        "DeliveryVanclass",
+        "DeliveryVanliabilityclass",
+        "Deliveryvanpackageliabilityclass"
+      ],
+      "enabled": true
+    }
+  ]
+}
