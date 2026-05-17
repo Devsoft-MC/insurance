@@ -1,0 +1,127 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Length 2213 >>
+stream
+BT
+/F1 9 Tf
+40 800 Td
+12 TL
+(Taxi - APK Calculation Check Sheet) Tj T*
+() Tj T*
+(Purpose: enter the same selections in the app and compare the premium lines.) Tj T*
+(Source: local United India config converted from the UIIC Vehicle Insurance APK.) Tj T*
+() Tj T*
+(Common input values for every scenario:) Tj T*
+(Company: United India Insurance) Tj T*
+(IDV: 100000) Tj T*
+(Purchase date: 17-05-2026) Tj T*
+(Renewal/current date: 17-05-2026) Tj T*
+(Zone: Zone A, unless the vehicle has no zone choice) Tj T*
+(Optional add-ons/discounts: not selected) Tj T*
+(Passenger, PA, CNG, EMI and accessory inputs: 0 unless shown below) Tj T*
+() Tj T*
+(==========================================================================) Tj T*
+(1. Liability Policy) Tj T*
+(Vehicle: Taxi) Tj T*
+(Policy shown in app: Liability Policy) Tj T*
+(Vehicle condition: Pre-Owned / One Year Package) Tj T*
+(CC / slab: < 1000 CC) Tj T*
+(Tenure selected: one_year) Tj T*
+(TP tenure used: one_year) Tj T*
+(OD tenure used: one_year) Tj T*
+() Tj T*
+(Expected premium breakdown:) Tj T*
+(Basic OD: Rs 0    OD rate: 3.284) Tj T*
+(Basic TP: Rs 6,040) Tj T*
+(OD add-on total: Rs 0) Tj T*
+(Liability add-on total: Rs 3,486) Tj T*
+(OD discount: Rs 0) Tj T*
+(Anti-theft discount: Rs 0) Tj T*
+(Automobile association discount: Rs 0) Tj T*
+(Voluntary excess discount: Rs 0) Tj T*
+(NCB discount: Rs 0) Tj T*
+(Net Own Damage Premium: Rs 0) Tj T*
+(Net Liability Premium: Rs 9,526) Tj T*
+(Net Premium: Rs 9,526) Tj T*
+(GST / Service Tax @ 18%: Rs 1,715) Tj T*
+(Net Premium Payable: Rs 11,241) Tj T*
+() Tj T*
+(Mandatory components included by the app:) Tj T*
+(- LL to Passenger: Rs 3,486) Tj T*
+() Tj T*
+(==========================================================================) Tj T*
+(2. Package Policy - One Year) Tj T*
+(Vehicle: Taxi) Tj T*
+(Policy shown in app: Package Policy) Tj T*
+(Vehicle condition: Pre-Owned / One Year Package) Tj T*
+(CC / slab: < 1000 CC) Tj T*
+(Tenure selected: one_year) Tj T*
+(TP tenure used: one_year) Tj T*
+(OD tenure used: one_year) Tj T*
+() Tj T*
+(Expected premium breakdown:) Tj T*
+(Basic OD: Rs 3,284    OD rate: 3.284) Tj T*
+(Basic TP: Rs 6,040) Tj T*
+(OD add-on total: Rs 0) Tj T*
+(Liability add-on total: Rs 3,486) Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 739 >>
+stream
+BT
+/F1 9 Tf
+40 800 Td
+12 TL
+(OD discount: Rs 0) Tj T*
+(Anti-theft discount: Rs 0) Tj T*
+(Automobile association discount: Rs 0) Tj T*
+(Voluntary excess discount: Rs 0) Tj T*
+(NCB discount: Rs 0) Tj T*
+(Net Own Damage Premium: Rs 3,284) Tj T*
+(Net Liability Premium: Rs 9,526) Tj T*
+(Net Premium: Rs 12,810) Tj T*
+(GST / Service Tax @ 18%: Rs 2,306) Tj T*
+(Net Premium Payable: Rs 15,116) Tj T*
+() Tj T*
+(Mandatory components included by the app:) Tj T*
+(- LL to Passenger: Rs 3,486) Tj T*
+() Tj T*
+(Notes:) Tj T*
+(- Standalone OD intentionally has no TP premium.) Tj T*
+(- Bundled/new package variants may show different TP and OD tenures.) Tj T*
+(- These sheets use the current app logic, which is based on extracted APK tables.) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000189 00000 n 
+0000002454 00000 n 
+0000002580 00000 n 
+0000003370 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3496
+%%EOF
