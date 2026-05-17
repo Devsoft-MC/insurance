@@ -42,9 +42,9 @@ export const styles = StyleSheet.create({
   },
   welcomeTitle: {
     color: "#ffffff",
-    fontSize: 31,
+    fontSize: 29,
     fontWeight: "900",
-    lineHeight: 38,
+    lineHeight: 36,
     marginTop: 60
   },
   welcomeCopy: {
@@ -53,6 +53,57 @@ export const styles = StyleSheet.create({
     lineHeight: 20,
     marginTop: 14,
     maxWidth: 280
+  },
+  homeShowcase: {
+    alignItems: "center",
+    height: 330,
+    justifyContent: "center",
+    marginTop: 18
+  },
+  homeFleetPanel: {
+    backgroundColor: "#20c78b",
+    borderColor: "#67ecc0",
+    borderRadius: 8,
+    borderWidth: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    justifyContent: "center",
+    padding: 14,
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.18,
+    shadowRadius: 16,
+    width: 286
+  },
+  homeVehicleTile: {
+    alignItems: "center",
+    backgroundColor: "#83f0c9",
+    borderRadius: 8,
+    height: 86,
+    justifyContent: "center",
+    paddingHorizontal: 8,
+    width: 122
+  },
+  homeVehicleLabel: {
+    color: "#073f31",
+    fontSize: 11,
+    fontWeight: "900",
+    marginTop: 8,
+    textAlign: "center"
+  },
+  homeFooterNote: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 9,
+    marginBottom: 16
+  },
+  homeFooterText: {
+    color: colors.muted,
+    flex: 1,
+    fontSize: 12,
+    fontWeight: "800",
+    lineHeight: 17
   },
   vehicleShowcase: {
     alignItems: "center",
